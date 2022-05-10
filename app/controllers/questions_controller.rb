@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[update show destroy edit]
+  before_action :set_question, only: %i[update show destroy edit hide]
   def create
     question = Question.create(question_params)
 
@@ -26,10 +26,16 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+  def hide
+    #@question.toggle(:hidden).save  #проходит валидации на модели
+    @question.toggle! :hidden
+    redirect_to question_path(:id)
+  end
+
   private
 
   def question_params
-    params.require(:question).permit(:body, :user_id)
+    params.require(:question).permit(:body, :user_id, :hidden)
   end
 
   def set_question
