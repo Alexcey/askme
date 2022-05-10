@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 #ruby "3.0.0"
 
+gem "font-awesome-rails"
+
 gem "rails", "~> 7.0.2", ">= 7.0.2.4"
 gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
