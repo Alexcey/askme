@@ -27,8 +27,8 @@ class QuestionsController < ApplicationController
   end
 
   def hide
-    #@question.toggle(:hidden).save  #проходит валидации на модели
-    @question.toggle! :hidden
+    @question.toggle(:hidden).save  #проходит валидации на модели
+
     redirect_to question_path(:id)
   end
 
