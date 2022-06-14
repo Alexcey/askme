@@ -30,3 +30,7 @@ a.hidden {
 .text-bold {
     font-weight: bold;
 }
+
+.text-red {
+    color: #d00000;
+}
